@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="tareas.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<style>
+		.material-symbols-outlined {
+		  font-variation-settings:
+		  'FILL' 0,
+		  'wght' 400,
+		  'GRAD' 0,
+		  'opsz' 48
+		}
+	</style>
+  </head>
+  <body>
+	<header>
+	</header>
+	<main>
+		<div class="side-content"></div>
+		<div class="tasks-container">
+			<div class="tasks-header">
+				<div class="tasks-menu">
+					<span class="tasks-menu-button material-symbols-outlined">
+						menu
+					</span>
+					<ul class="tasks-menu-dropdown">
+						<li class="toggle-theme">Cambiar Tema</li>
+						<li class="tasks-filter" data-state="">Todas</li>
+						<li class="tasks-filter" data-state="Pendiente">Pendientes</li>
+						<li class="tasks-filter" data-state="En progreso">En Progreso</li>
+						<li class="tasks-filter" data-state="Terminada">Terminadas</li>
+						<li class="tasks-add">Agregar Tarea</li>
+				    </ul>
+				</div>
+			</div>
+			<ul class="tasks-list">
+			</ul>
+		</div>
+		<div class="side-content"></div>
+	</main>
+	<div class="error"></div>
+	<div class="task-modal">
+      <form class="task-form" action="/" method="get">
+		 <span class="modal-close material-symbols-outlined">
+		    close
+ 		 </span>
+         <h2 class="task-form-title">Nueva Tarea</h2>
+		 <input class="task-form-title-input" type="text" placeholder="Título" value="" />
+         <select class="task-form-state-select" name="select">
+		  <option value="Pendiente">Pendiente</option>
+		  <option value="En progreso">En progreso</option>
+		  <option value="Terminada">Terminada</option>
+		 </select>
+		 <button class="task-save" type="button">Guardar</button>
+       </form>
+    </div>
+	<script src="tareas.js"></script>
+  </body>
+</html>
