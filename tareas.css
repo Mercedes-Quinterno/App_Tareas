@@ -1,0 +1,164 @@
+html[dark], [dark] {
+	--primary: blue;
+	--secondary: teal;
+	--main: #0f0f0f;
+	--main-accented: #212121;
+	--text: #FFFFFF;
+	--primary-text: #FFFFFF;
+	--secondary-text: #757575;
+	--icons: #FFFFFF;
+	--icons-hover: #AFAFAF;
+}
+html[light], [light] {
+	--primary: blue;
+	--secondary: teal;
+	--main: #FFFFFF;
+	--main-accented: #FFFFFFF;
+	--text: #FFFFFF;
+	--primary-text: #FFFFFF;
+	--secondary-text: #212121;
+	--icons: #212121;
+	--icons-hover: #323232;
+}
+body {
+	-webkit-transition: background-color 1s ease-out;
+	-moz-transition: background-color 1s ease-out;
+	-o-transition: background-color 1s ease-out;
+	transition: background-color 1s ease-out;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	background-color: var(--main);
+	height: 100vh;
+	font-family: 'Roboto', sans-serif;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body header {
+	height: 30px;
+}
+body main {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 20px;
+	height: calc(100% - 30px);
+}
+body .side-content {
+	flex-grow: 1;
+}
+body .tasks-container {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+}
+body .tasks-container .tasks-header {
+	display: grid;
+	padding: 20px;
+}
+body .tasks-container .tasks-header .tasks-menu {
+	display: flex;
+	justify-self: flex-end;
+}
+body .tasks-container .tasks-header .tasks-menu .tasks-menu-button {
+	color: var(--icons);
+	cursor: pointer;
+}
+body .tasks-container .tasks-header .tasks-menu .tasks-menu-button:hover {
+	color: var(--icons-hover);
+}
+body .tasks-container .tasks-header .tasks-menu .tasks-menu-dropdown {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	transition: all 0.5s ease;
+	margin-top: 1rem;
+	display: none;
+}
+body .tasks-container .tasks-header .tasks-menu .tasks-menu-dropdown.active {	
+	visibility: visible;
+	opacity: 1;
+	display: block;
+    background: gray;
+    list-style-type: none;
+	display: flex;
+    flex-direction: column;
+    padding: 0;
+	border-radius: 0 5px 5px 5px;
+}
+body .tasks-container .tasks-header .tasks-menu .tasks-menu-dropdown.active li {
+	display: flex;
+	padding: 10px;
+	color: var(--primary-text);
+}
+body .tasks-container .tasks-header .tasks-menu .tasks-menu-dropdown.active li:hover {
+	background: rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+}
+body .tasks-container .tasks-header .tasks-menu .tasks-menu-dropdown.active li a {
+	text-decoration: unset;
+	color: var(--primary-text);
+}
+body .tasks-container .tasks-list {
+	display: flex;
+    flex-direction: column;
+    grid-row-gap: 20px;
+    padding: 20px;
+    list-style-type: none;
+	margin: 0;
+}
+body .tasks-container .tasks-list .task-list-item {
+	color: var(--primary-text);
+    background-color: gray;
+    border-radius: 4px;
+    height: 100px;
+    padding: 20px;
+	box-shadow: rgb(0 0 0 / 20%) 0px 3px 3px -2px, rgb(0 0 0 / 14%) 0px 3px 4px 0px, rgb(0 0 0 / 12%) 0px 1px 8px 0px;
+}
+body .tasks-container .tasks-list .task-list-item.finished {
+	color: var(--primary-text);
+    background-color: #4CAF50;
+}
+body .tasks-container .tasks-list .task-list-item.pending {
+	color: var(--primary-text);
+    background-color: #FBC02D;
+}
+body .tasks-container .tasks-list .task-list-item.in-progress {
+	color: var(--primary-text);
+    background-color: #2196F3;
+}
+body .task-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 3;
+    opacity:0;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in;
+    pointer-events: none;
+}
+body .task-modal.active {
+    opacity:1;
+    pointer-events: auto;
+}
+body .task-modal > .task-form {
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 3px;
+	background-color: var(--main);
+	color: var(--primary-text);
+}
+body .task-modal .task-form .modal-close {
+	cursor: pointer;
+}
+body .task-modal .task-form .modal-close:hover {
+	color: var(--secondary-text);
+}
